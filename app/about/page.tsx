@@ -6,13 +6,13 @@ import FadeInUp from "@/components/FadeInUp";
 const TEAM = [
   {
     name: "Carl Wolf",
-    role: "Managing Partner, Head of Operations",
+    role: "Managing Partner",
     photo: "/carl-wolf.png",
     bio: "Carl Wolf is a seasoned operator, investor, and consultant with experience in scaling high-growth technology companies. He has held executive roles overseeing marketing, business development, sales, and operations — including COO of LanzaTech (IPO 2023) and Chief Commercial & COO of Newlab. His commercial experience spans capital raising, licensing, and complex deal structures. Earlier in his career, Carl worked as a management consultant in Washington, DC. He holds a BA from UMBC, an MS from NYIT, and an MBA from Northwestern's Kellogg School of Management. He lives in Westchester, New York with his wife and two children.",
   },
   {
     name: "Brian Cinelli",
-    role: "Managing Partner, Head of Capital Markets",
+    role: "Managing Partner",
     photo: "/brian-cinelli.jpg",
     bio: "Brian Cinelli is an operator and investor with experience building and scaling multi-location operating businesses. He is currently a co-owner and operator of multi-location companies, directly involved in scaling operations, building management teams, and driving revenue growth. Previously, Brian served as a Vice President at Eastcom Associates, a distributor in the underground utility sector, where he led product development, sales, and growth strategy. He brings a hands-on operating background and a disciplined, execution-focused approach to sourcing and building platform businesses.",
   },
