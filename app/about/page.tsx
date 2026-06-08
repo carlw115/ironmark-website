@@ -5,12 +5,6 @@ import FadeInUp from "@/components/FadeInUp";
 
 const TEAM = [
   {
-    name: "Lucas Gabow",
-    role: "Managing Partner, Founder",
-    photo: "/lucas-gabow.png",
-    bio: "Lucas Gabow is a New York-based entrepreneur and operator with a background in storytelling, media, and high-impact digital growth. He began his career building and scaling digital platforms for founders and creators, helping shape brand narratives that reached millions and translated attention into durable businesses. More recently, Lucas has moved into hands-on operations and ownership — including as a partner at Protocol Health, a modern longevity clinic. He is driven by a simple philosophy: buy and build businesses the right way, with care for people, respect for legacy, and a commitment to long-term value creation.",
-  },
-  {
     name: "Carl Wolf",
     role: "Managing Partner, Head of Operations",
     photo: "/carl-wolf.png",
@@ -21,12 +15,6 @@ const TEAM = [
     role: "Managing Partner, Head of Capital Markets",
     photo: "/brian-cinelli.jpg",
     bio: "Brian Cinelli is an operator and investor with experience building and scaling multi-location operating businesses. He is currently a co-owner and operator of multi-location companies, directly involved in scaling operations, building management teams, and driving revenue growth. Previously, Brian served as a Vice President at Eastcom Associates, a distributor in the underground utility sector, where he led product development, sales, and growth strategy. He brings a hands-on operating background and a disciplined, execution-focused approach to sourcing and building platform businesses.",
-  },
-  {
-    name: "Joseph Garvey",
-    role: "Managing Partner",
-    photo: "/joseph-garvey.jpg",
-    bio: "Joseph Garvey is a founder-operator building scalable, service-based businesses. He is the founder of Protocol Health, a physician-led, multi-state longevity and health-optimization platform operating through a hybrid in-clinic and telehealth model. His background spans healthcare, civic technology, and digital media. He brings deep operational rigor, data-driven growth strategy, and a long-term ownership mindset to every business he builds and partners with.",
   },
 ];
 
@@ -170,7 +158,7 @@ export default function AboutPage() {
             Our Team
           </span>
         </FadeInUp>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 max-w-3xl mx-auto">
           {TEAM.map((member, i) => (
             <FadeInUp key={member.name} delay={i * 0.1}>
               <TeamCard
