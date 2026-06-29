@@ -56,12 +56,11 @@ const INDUSTRIES = [
   "Light Manufacturing",
   "Specialty Contracting",
   "Distribution",
-  "Healthcare & Wellness",
+  "Site Development & Excavation",
 ];
 
 const NOT_A_FIT = [
   "Pre-revenue or early-stage companies",
-  "Real estate or asset-heavy deals",
   "Technology or software businesses",
   "Turnarounds or distressed situations",
   "Businesses with no management team beyond the owner",
