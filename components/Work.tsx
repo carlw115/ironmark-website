@@ -16,7 +16,7 @@ const CRITERIA = [
   {
     num: "03",
     title: "Real profitability",
-    desc: "$1M\u20135M in EBITDA with clean financials.",
+    desc: "$2M\u201310M in EBITDA with clean financials.",
   },
   {
     num: "04",
