@@ -5,7 +5,7 @@ import FadeInUp from "@/components/FadeInUp";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 const PARAMETERS = [
-  { value: "$2M–$10M", label: "Target EBITDA" },
+  { value: "$2M–$15M", label: "Target EBITDA" },
   { value: "Lower Middle", label: "Market Focus" },
   { value: "Long-Term", label: "Hold Period" },
   { value: "Operators", label: "Who We Are" },
@@ -27,8 +27,8 @@ const CRITERIA = [
   {
     num: "03",
     title: "Real profitability",
-    tagline: "$2M–$10M in EBITDA with clean financials.",
-    desc: "We target businesses generating $2M–$10M in EBITDA. Clean books, no surprises. Financial clarity is the foundation of a good deal.",
+    tagline: "$2M–$15M in EBITDA with clean financials.",
+    desc: "We target businesses generating $2M–$15M in EBITDA. Clean books, no surprises. Financial clarity is the foundation of a good deal.",
   },
   {
     num: "04",

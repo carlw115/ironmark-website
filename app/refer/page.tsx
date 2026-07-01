@@ -135,7 +135,7 @@ export default function ReferPage() {
               your network who&apos;s been talking about eventually stepping back.
             </p>
             <p className="text-sm text-neutral-500 leading-relaxed">
-              We look for profitable, established businesses with $2M–$10M in
+              We look for profitable, established businesses with $2M–$15M in
               EBITDA — home services, business services, specialty contracting,
               distribution, and similar industries. But if you&apos;re not sure
               whether it&apos;s a fit, send it anyway. We&apos;ll always give you an
