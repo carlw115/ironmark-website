@@ -57,6 +57,7 @@ const INDUSTRIES = [
   "Specialty Contracting",
   "Distribution",
   "Site Development & Excavation",
+  "Aerospace & Defense",
 ];
 
 const NOT_A_FIT = [
@@ -203,10 +204,10 @@ export default function InvestmentCriteriaPage() {
               business we&apos;re built to own and operate for the long term.
             </p>
             <p className="text-sm text-neutral-500 leading-relaxed">
-              We&apos;re not a fund with a five-year exit mandate. We&apos;re not looking
-              for a turnaround project. We&apos;re looking for a business that&apos;s
-              already working — one where better ownership and a more focused
-              operator can make something good into something great.
+              We&apos;re not looking for a turnaround project. We&apos;re looking for a
+              business that&apos;s already working — one where better ownership and
+              a more focused operator can make something good into something
+              great.
             </p>
           </div>
           <div className="flex flex-col gap-5">

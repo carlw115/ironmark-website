@@ -31,17 +31,6 @@ export default function ContactPage() {
                 about whether we&apos;re a fit.
               </p>
             </div>
-            <div className="border-t border-neutral-100 pt-8 flex flex-col gap-3">
-              <p className="text-sm uppercase tracking-[0.2em] text-neutral-500 font-medium">
-                Prefer email?
-              </p>
-              <a
-                href="mailto:info@ironmark.capital"
-                className="text-sm text-black hover:opacity-50 transition-opacity duration-200"
-              >
-                info@ironmark.capital
-              </a>
-            </div>
           </div>
 
           {/* Right — form */}
