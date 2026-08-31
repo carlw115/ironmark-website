@@ -4,7 +4,6 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import Work from "@/components/Work";
 import Contact from "@/components/Contact";
-import Refer from "@/components/Refer";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <About />
       <Work />
       <Contact />
-      <Refer />
       <Footer />
     </main>
   );
