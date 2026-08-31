@@ -2,8 +2,6 @@
 
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export type FormState = {
   status: "idle" | "success" | "error";
   message?: string;
@@ -23,6 +21,16 @@ export async function submitContact(
   if (!name || !email || !message) {
     return { status: "error", message: "Please fill in all required fields." };
   }
+
+  if (!process.env.RESEND_API_KEY) {
+    console.error("submitContact: RESEND_API_KEY is not set");
+    return {
+      status: "error",
+      message: "Something went wrong on our end. Please try again shortly.",
+    };
+  }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   const { error } = await resend.emails.send({
     from: "Ironmark Capital <noreply@ironmark.capital>",
@@ -44,8 +52,11 @@ export async function submitContact(
   });
 
   if (error) {
-    console.error("Resend error:", JSON.stringify(error));
-    return { status: "error", message: `Debug: ${error.name} — ${error.message}` };
+    console.error("submitContact: Resend error:", JSON.stringify(error));
+    return {
+      status: "error",
+      message: "Something went wrong sending your message. Please try again shortly.",
+    };
   }
 
   return { status: "success" };
