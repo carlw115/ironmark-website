@@ -1,9 +1,8 @@
 "use client";
 
-import { useActionState } from "react";
-import { submitContact, type FormState } from "./actions";
+import { useState, type FormEvent } from "react";
 
-const INITIAL_STATE: FormState = { status: "idle" };
+const RECIPIENT = "carl@ironmark.capital";
 
 const inputClass =
   "w-full bg-transparent border-b border-neutral-200 py-3 text-sm text-black placeholder:text-neutral-400 focus:outline-none focus:border-black transition-colors duration-200";
@@ -11,23 +10,54 @@ const inputClass =
 const labelClass = "block text-xs uppercase tracking-[0.15em] text-neutral-400 mb-2";
 
 export default function ContactForm() {
-  const [state, action, pending] = useActionState(submitContact, INITIAL_STATE);
+  const [submitted, setSubmitted] = useState(false);
 
-  if (state.status === "success") {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const business = formData.get("business") as string;
+    const revenue = formData.get("revenue") as string;
+    const message = formData.get("message") as string;
+
+    const subject = `New inquiry from ${name}${business ? ` — ${business}` : ""}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      phone ? `Phone: ${phone}` : null,
+      business ? `Business: ${business}` : null,
+      revenue ? `Revenue: ${revenue}` : null,
+      ``,
+      `Message:`,
+      message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.location.href = `mailto:${RECIPIENT}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
+  }
+
+  if (submitted) {
     return (
       <div className="py-16 flex flex-col gap-4">
         <p className="text-2xl md:text-3xl font-medium leading-snug">
-          Thanks — we&apos;ll be in touch.
+          Almost there.
         </p>
         <p className="text-sm text-neutral-500 leading-relaxed max-w-sm">
-          We read every message and typically respond within one business day.
+          We&apos;ve opened a pre-filled email in your email app. Just hit send
+          from there to reach us.
         </p>
       </div>
     );
   }
 
   return (
-    <form action={action} className="flex flex-col gap-10">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-10">
       {/* Row 1 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
@@ -127,17 +157,12 @@ export default function ContactForm() {
         />
       </div>
 
-      {state.status === "error" && (
-        <p className="text-sm text-red-500">{state.message}</p>
-      )}
-
       <div>
         <button
           type="submit"
-          disabled={pending}
-          className="text-xs uppercase tracking-[0.15em] px-8 py-4 bg-black text-white hover:bg-neutral-800 transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+          className="text-xs uppercase tracking-[0.15em] px-8 py-4 bg-black text-white hover:bg-neutral-800 transition-colors duration-200"
         >
-          {pending ? "Sending..." : "Send Message"}
+          Send Message
         </button>
       </div>
     </form>
