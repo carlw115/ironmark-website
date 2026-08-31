@@ -116,7 +116,7 @@ export default function Hero() {
             {...fadeUp(0)}
             className="text-white/60 text-sm uppercase tracking-[0.25em] font-medium mb-8"
           >
-            Long-term partners, not private equity.
+            Long-term partners.
           </motion.p>
           <motion.h1
             initial={{ opacity: 0 }}

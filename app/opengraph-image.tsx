@@ -117,7 +117,7 @@ export default async function Image() {
               textTransform: "uppercase",
             }}
           >
-            Long-term partners, not private equity.
+            Long-term partners.
           </span>
           <span
             style={{

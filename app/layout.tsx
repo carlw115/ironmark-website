@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Ironmark Capital",
   },
   description:
-    "We partner with exceptional owners to preserve what works, improve what doesn't, and build companies meant to last. Long-term partners, not private equity.",
+    "We partner with exceptional owners to preserve what works, improve what doesn't, and build companies meant to last. Long-term partners.",
   metadataBase: new URL("https://ironmark.capital"),
   openGraph: {
     title: "Ironmark Capital — A Long-Term Home for Great Businesses",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ironmark Capital",
     description:
-      "Long-term partners, not private equity. We buy great businesses and hold them.",
+      "Long-term partners. We buy great businesses and hold them.",
   },
 };
 
