@@ -2,7 +2,13 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ContactForm from "./ContactForm";
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ sent?: string }>;
+}) {
+  const { sent } = await searchParams;
+
   return (
     <main>
       <Nav forceDark />
@@ -35,7 +41,18 @@ export default function ContactPage() {
 
           {/* Right — form */}
           <div>
-            <ContactForm />
+            {sent === "1" ? (
+              <div className="py-16 flex flex-col gap-4">
+                <p className="text-2xl md:text-3xl font-medium leading-snug">
+                  Thanks — we&apos;ll be in touch.
+                </p>
+                <p className="text-sm text-neutral-500 leading-relaxed max-w-sm">
+                  We read every message and typically respond within one business day.
+                </p>
+              </div>
+            ) : (
+              <ContactForm />
+            )}
           </div>
 
         </div>

@@ -1,7 +1,3 @@
-"use client";
-
-import { useState, type FormEvent } from "react";
-
 const RECIPIENT = "carl@ironmark.capital";
 
 const inputClass =
@@ -10,54 +6,18 @@ const inputClass =
 const labelClass = "block text-xs uppercase tracking-[0.15em] text-neutral-400 mb-2";
 
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const phone = formData.get("phone") as string;
-    const business = formData.get("business") as string;
-    const revenue = formData.get("revenue") as string;
-    const message = formData.get("message") as string;
-
-    const subject = `New inquiry from ${name}${business ? ` — ${business}` : ""}`;
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      phone ? `Phone: ${phone}` : null,
-      business ? `Business: ${business}` : null,
-      revenue ? `Revenue: ${revenue}` : null,
-      ``,
-      `Message:`,
-      message,
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    window.location.href = `mailto:${RECIPIENT}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-    setSubmitted(true);
-  }
-
-  if (submitted) {
-    return (
-      <div className="py-16 flex flex-col gap-4">
-        <p className="text-2xl md:text-3xl font-medium leading-snug">
-          Almost there.
-        </p>
-        <p className="text-sm text-neutral-500 leading-relaxed max-w-sm">
-          We&apos;ve opened a pre-filled email in your email app. Just hit send
-          from there to reach us.
-        </p>
-      </div>
-    );
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-10">
+    <form
+      action={`https://formsubmit.co/${RECIPIENT}`}
+      method="POST"
+      className="flex flex-col gap-10"
+    >
+      <input type="hidden" name="_subject" value="New inquiry from Ironmark Capital website" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://ironmark.capital/contact?sent=1" />
+      <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
+
       {/* Row 1 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
